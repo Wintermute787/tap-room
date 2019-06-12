@@ -6,4 +6,15 @@ export class Keg {
     pour(){
         return this.contents--;
     }
+
+    saveEdits(newName, newBrand, newPrice, newFlavor){
+        console.log(newName);
+        console.log(newBrand);
+        console.log(newPrice);
+        console.log(newFlavor);
+        this.name = newName;
+        this.brand = newBrand;
+        this.price = newPrice;
+        this.flavor = newFlavor;
+    }
 }

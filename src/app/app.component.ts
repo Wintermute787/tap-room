@@ -30,35 +30,47 @@ export class AppComponent {
   new: boolean = false;
   list: boolean = true;
   customer: boolean = false; 
+  edit: boolean = false; 
+  show: boolean = true;
 
   open(id) {
     if (id === 1) {
       this.customer = false;
       this.list = false;
       this.new = true;
+      this.edit = false;
     } else if (id === 2) {
       this.new = false;
       this.customer = false;
       this.list = true;
-    } else {
+      this.show = true;
+    } else if (id === 3) {
       this.new = false;
       this.list = false;
       this.customer = true;
+      this.edit = false;
+      this.show = false;
+    } else if (id === 4) {
+      this.new = false;
+      this.list = true;
+      this.customer = false;
+      this.show = false;
+      this.edit = true;
     }
   }
 
   addNewKeg(name: string, brand: string, price: number, flavor: string) {
     let newKeg = new Keg(name, brand, price, flavor, 134);
     this.kegs.push(newKeg);
-    // sessionStorage.setItem('keg', JSON.stringify(newKeg));
-    // console.log(sessionStorage.getItem('keg'));
-    
-    
-    console.log(newKeg);
-
   }
 
+  selectedKeg: Keg;
+
+  editKeg(clickedKeg){
+    this.selectedKeg = clickedKeg;
+}
 }
 
-
-// sessionStorage.clear()
+    // sessionStorage.setItem('keg', JSON.stringify(newKeg));
+    // console.log(sessionStorage.getItem('keg'));
+    // sessionStorage.clear()

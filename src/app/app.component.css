@@ -1,0 +1,41 @@
+/* dark-blue: #112a40;
+sea-foam: #5abfa3;
+cream: #f2dfa7;
+orange: #F2AA52
+pinkish: #f2916d; */
+
+
+body {
+    background-color: #f2dfa7;
+   
+}
+.card {
+    background-color: #5abfa3;
+    transition: all .2s;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.22), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 9px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #f2dfa7;
+
+}
+
+.title{
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 7em;
+  padding: 50px 0;
+  color:  #112a40;
+  border-top: 1px solid #112a40;
+  border-bottom: 1px solid #112a40;
+}
+
+
+
