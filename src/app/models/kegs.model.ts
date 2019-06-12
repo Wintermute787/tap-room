@@ -4,10 +4,9 @@ export class Keg {
     constructor(public name: string, public brand: string, public price: number, public flavor: string, public contents: number) {}
 
     pour(){
-        return this.contents--;
-        // if (this.contents < 1) {
-
-        // }
+        if (this.contents > 0) {            
+            return this.contents--;
+        }
     }
 
     saveEdits(newName, newBrand, newPrice, newFlavor){
