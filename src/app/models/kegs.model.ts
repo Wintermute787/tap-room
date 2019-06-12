@@ -5,6 +5,9 @@ export class Keg {
 
     pour(){
         return this.contents--;
+        // if (this.contents < 1) {
+
+        // }
     }
 
     saveEdits(newName, newBrand, newPrice, newFlavor){

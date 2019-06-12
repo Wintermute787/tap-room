@@ -56,28 +56,27 @@
       <h1 class="title">List of Kegs in Stock</h1>
       <div id="show" *ngIf="show === true">
         <div *ngFor="let keg of kegs">
-          <div class="row">
-              <div class="col s12 m6">
+      
                 <div class="card">
+                    <div [class]="lowStock(keg)">
                   <div class="card-content white-text">
                     <span class="card-title">{{keg.name}}</span>
                       <p>Brand: {{keg.brand}}</p>
                       <p>${{keg.price}}</p>
                       <p>Flavor: {{keg.flavor}} </p>
+                      <div [class]="highlight(keg)">
                       <p>Remaining pints: {{keg.contents}} </p>
+                    </div>
                   </div>
                   <div class="card-action">
                       <a class="waves-effect waves-light btn" (click)="keg.pour()">Pour</a>
                       <a class="waves-effect waves-light btn" (click)="open(4); this.show = false; editKeg(keg)">Edit</a>
                   </div>
                 </div>
-              </div>
-            </div>  
+                </div>
           </div>
         </div>   
         <div id="edit" *ngIf="edit === true && show === false">
-            <div class="row">
-                <div class="col s12 m6">
                   <div class="card">
                     <div class="card-content white-text">
                       <span class="card-title">Edit</span>
@@ -94,13 +93,26 @@
                         <a class="waves-effect waves-light btn" (click)="edit = false; show = true; selectedKeg.saveEdits(newName, newBrand, newPrice, newFlavor)">Save</a>
                     </div>
                   </div>
-                </div>
-              </div> 
           </div>
   </div>
 
 <div class="container" id="customer" *ngIf="customer === true">
   <h1 class="title">Customer home</h1>
+  <div *ngFor="let keg of kegs">
+      
+      <div class="card">
+        <div class="card-content white-text">
+          <span class="card-title">{{keg.name}}</span>
+            <p>Brand: {{keg.brand}}</p>
+            <p>${{keg.price}}</p>
+            <p>Flavor: {{keg.flavor}} </p>
+        </div>
+        <div class="card-action">
+            <!-- <a class="waves-effect waves-light btn" (click)="keg.pour()">Pour</a>
+            <a class="waves-effect waves-light btn" (click)="open(4); this.show = false; editKeg(keg)">Edit</a> -->
+        </div>
+      </div>
+</div>
 </div>
 
 </body>

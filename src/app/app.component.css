@@ -9,11 +9,13 @@ body {
     background-color: #f2dfa7;
    
 }
+
 .card {
     background-color: #5abfa3;
     transition: all .2s;
     box-shadow: 0 19px 38px rgba(0,0,0,0.22), 0 15px 12px rgba(0,0,0,0.22);
     border-radius: 9px;
+    animation: move 1s;
 }
 
 .card:hover {
@@ -24,7 +26,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #f2dfa7;
-
 }
 
 .title{
@@ -38,4 +39,22 @@ body {
 }
 
 
+#show {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 3em;
+}
 
+#edit {
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+
+@keyframes move{
+    0% {left: 100em;}
+    50%{left:-10em;}
+    100%{left:0em;}
+}

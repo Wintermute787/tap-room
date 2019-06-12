@@ -17,7 +17,7 @@ export class AppComponent {
 
   thisKeg4: Keg = new Keg('Squirt', 'CocaCola', 3, 'Grapefruit', 60)
 
-  thisKeg5: Keg = new Keg('Coke', 'CocaCola', 3, 'Cola', 40)
+  thisKeg5: Keg = new Keg('Coke', 'CocaCola', 3, 'Cola', 20)
 
   kegs: Keg[] = [
     this.thisKeg, 
@@ -56,6 +56,22 @@ export class AppComponent {
       this.customer = false;
       this.show = false;
       this.edit = true;
+    }
+  }
+
+  lowStock(keg) {
+    if (keg.contents < 11) {
+      return "card orange accent-2";
+    } else {
+      return "";
+    }
+  }
+
+  highlight(keg) {
+    if (keg.contents < 11) {
+      return "card red";
+    } else {
+      return "";
     }
   }
 
