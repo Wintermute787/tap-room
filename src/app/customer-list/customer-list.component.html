@@ -1,0 +1,19 @@
+<h1 class="title">Customer home</h1>
+<div class="filter">
+  <h4>Filter By...</h4>
+  <a class="waves-effect waves-light btn">Price</a>
+  <a class="waves-effect waves-light btn">Brand</a>
+  <a class="waves-effect waves-light btn">Flavor</a>
+</div>
+<div id="customer-list">
+  <div *ngFor="let keg of childKegList">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title">{{keg.name}}</span>
+          <p>Brand: {{keg.brand}}</p>
+          <p>${{keg.price}}</p>
+          <p>Flavor: {{keg.flavor}} </p>
+      </div>
+    </div>
+  </div>
+</div>

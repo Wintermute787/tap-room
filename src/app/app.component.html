@@ -1,44 +1,28 @@
 <div class="body">
 
-<app-nav (sendId)="open($event)"></app-nav>
+  <app-nav (sendId)="open($event)"></app-nav>
 
-<div class="fullscreen-video">
-  <video autoplay muted loop id="myVideo">
-    <source src="../assets/drink.mp4" type="video/mp4">
-  </video>
-</div>
-
-<div class="container" id="new" *ngIf="new === true">
-    <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
-</div>
-
-<div class="container" id="list" *ngIf="list === true">
-  <div id="show" *ngIf="show === true">
-    <app-employee-list [childKegList]="masterKegs" (clickSender)="editKeg($event)"></app-employee-list>
+  <div class="fullscreen-video">
+    <video autoplay muted loop id="myVideo">
+      <source src="../assets/drink.mp4" type="video/mp4">
+    </video>
   </div>
-  <div id="edit" *ngIf="edit === true && show === false">
-    <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishEditing($event)"></app-edit-keg>    
-  </div>
-</div>
 
-<div class="container" id="customer" *ngIf="customer === true">
-  <h1 class="title">Customer home</h1>
-  <div id="customer-list">
-  <div *ngFor="let keg of masterKegs">
-      <div class="card">
-        <div class="card-content white-text">
-          <span class="card-title">{{keg.name}}</span>
-            <p>Brand: {{keg.brand}}</p>
-            <p>${{keg.price}}</p>
-            <p>Flavor: {{keg.flavor}} </p>
-        </div>
-        <div class="card-action">
-            <!-- <a class="waves-effect waves-light btn" (click)="keg.pour()">Pour</a>
-            <a class="waves-effect waves-light btn" (click)="open(4); this.show = false; editKeg(keg)">Edit</a> -->
-        </div>
-      </div>
+  <div class="container" id="new" *ngIf="new === true">
+      <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+  </div>
+
+  <div class="container" id="list" *ngIf="list === true">
+    <div id="show" *ngIf="show === true">
+      <app-employee-list [childKegList]="masterKegs" (clickSender)="editKeg($event)"></app-employee-list>
+    </div>
+    <div id="edit" *ngIf="edit === true && show === false">
+      <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishEditing($event)"></app-edit-keg>    
     </div>
   </div>
-</div>
+
+  <div class="container" id="customer" *ngIf="customer === true">
+    <app-customer-list [childKegList]="masterKegs"></app-customer-list>
+  </div>
 
 </div>

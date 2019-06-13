@@ -19,10 +19,10 @@ export class AppComponent {
   selectedKeg: Keg;
     
   new: boolean = false;
-  list: boolean = true;
-  customer: boolean = false; 
+  list: boolean = false;
+  customer: boolean = true; 
   edit: boolean = false; 
-  show: boolean = true;
+  show: boolean = false;
 
   open(id) {
     if (id === 1) {

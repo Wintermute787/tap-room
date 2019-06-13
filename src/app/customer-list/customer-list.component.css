@@ -1,22 +1,3 @@
-/* dark-blue: #112a40;
-sea-foam: #5abfa3;
-cream: #f2dfa7;
-orange: #F2AA52
-pinkish: #f2916d; */
-
-
-.body {
-    
-    height: 100vh;
-    max-width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-color: #f2dfa76e;
-    
-    overflow-x: hidden;
-
-}
-
 .card {
     background-color: #5abfa3;
     transition: all .2s;
@@ -45,6 +26,7 @@ pinkish: #f2916d; */
   border-bottom: 1px solid #112a40;
 }
 
+
 #customer-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -52,31 +34,18 @@ pinkish: #f2916d; */
     grid-gap: 3em;
 }
 
-#edit {
-    width: 50%;
-    margin-left: 25%;
+.filter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3em;
+    border: 1px solid #112a40;
+    background-color: #112a4065;
+    font-family: 'Indie Flower', cursive;
+
 }
-
-#myVideo{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* width: 100%;
-    height: 100vh; */
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    
-}
-
-
-
-@keyframes move{
-    0% {left: 100em;}
-    50%{left:-10em;}
-    100%{left:0em;}
+.filter a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
 }

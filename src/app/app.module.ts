@@ -9,6 +9,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
 import { NavComponent } from './nav/nav.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavComponent } from './nav/nav.component';
     EmployeeListComponent,
     EditKegComponent,
     NewKegComponent,
-    NavComponent
+    NavComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
