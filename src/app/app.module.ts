@@ -10,6 +10,7 @@ import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
 import { NavComponent } from './nav/nav.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+// import { FilterByPricePipe } from './filter-by-price.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     EditKegComponent,
     NewKegComponent,
     NavComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    // FilterByPricePipe
   ],
   imports: [
     BrowserModule,
