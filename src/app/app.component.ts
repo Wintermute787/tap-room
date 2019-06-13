@@ -9,24 +9,15 @@ import {Keg} from './models/kegs.model';
 export class AppComponent {
   title = 'Tap Room';
 
-  thisKeg: Keg = new Keg('Pepsi', 'PepsiCO', 2, 'Cola', 124)
-
-  thisKeg2: Keg = new Keg('Dr.Pepper', 'PepsiCO', 1, 'Pepper', 124)
-
-  thisKeg3: Keg = new Keg('Sprite', 'CocaCola', 5, 'LemonLime', 124)
-
-  thisKeg4: Keg = new Keg('Squirt', 'CocaCola', 3, 'Grapefruit', 60)
-
-  thisKeg5: Keg = new Keg('Coke', 'CocaCola', 3, 'Cola', 20)
-
-  kegs: Keg[] = [
-    this.thisKeg, 
-    this.thisKeg2,
-    this.thisKeg3,
-    this.thisKeg4,
-    this.thisKeg5
+  masterKegs: Keg[] = [
+    new Keg('Pepsi', 'PepsiCO', 2, 'Cola', 124),
+    new Keg('Dr.Pepper', 'PepsiCO', 1, 'Pepper', 124),
+    new Keg('Sprite', 'CocaCola', 5, 'LemonLime', 124),
+    new Keg('Squirt', 'CocaCola', 3, 'Grapefruit', 60),
+    new Keg('Coke', 'CocaCola', 3, 'Cola', 20)
   ]
-  
+  selectedKeg: Keg;
+    
   new: boolean = false;
   list: boolean = true;
   customer: boolean = false; 
@@ -59,32 +50,18 @@ export class AppComponent {
     }
   }
 
-  lowStock(keg) {
-    if (keg.contents < 11) {
-      return "card orange accent-2";
-    } else {
-      return "";
-    }
-  }
-
-  highlight(keg) {
-    if (keg.contents < 11) {
-      return "card red";
-    } else {
-      return "";
-    }
-  }
-
   addNewKeg(name: string, brand: string, price: number, flavor: string) {
     let newKeg = new Keg(name, brand, price, flavor, 134);
-    this.kegs.push(newKeg);
+    this.masterKegs.push(newKeg);
   }
 
-  selectedKeg: Keg;
+
 
   editKeg(clickedKeg){
     this.selectedKeg = clickedKeg;
-}
+    this.open(4);
+    this.show = false;
+  }
 }
 
     // sessionStorage.setItem('keg', JSON.stringify(newKeg));

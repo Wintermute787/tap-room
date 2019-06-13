@@ -3,12 +3,6 @@ import { AppComponent } from "../app.component";
 export class Keg {
     constructor(public name: string, public brand: string, public price: number, public flavor: string, public contents: number) {}
 
-    pour(){
-        if (this.contents > 0) {            
-            return this.contents--;
-        }
-    }
-
     saveEdits(newName, newBrand, newPrice, newFlavor){
         console.log(newName);
         console.log(newBrand);

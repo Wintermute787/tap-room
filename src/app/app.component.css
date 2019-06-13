@@ -5,15 +5,22 @@ orange: #F2AA52
 pinkish: #f2916d; */
 
 
-body {
-    background-color: #f2dfa7;
-   
+.body {
+    
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #f2dfa75b;
+    
+    overflow-x: hidden;
+
 }
 
 .card {
     background-color: #5abfa3;
     transition: all .2s;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.22), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.22), 0 15px 12px rgba(83, 49, 49, 0.22);
     border-radius: 9px;
     animation: move 1s;
 }
@@ -38,8 +45,7 @@ body {
   border-bottom: 1px solid #112a40;
 }
 
-
-#show {
+#customer-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -51,6 +57,36 @@ body {
     margin-left: 25%;
 }
 
+#myVideo{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* width: 100%;
+    height: 100vh; */
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    
+}
+
+#new {
+    margin-top: 5em;
+}
+
+#new form {
+    border: 1px solid #5abfa3;
+    background-color: #112a40bb;
+    color: lightgrey;
+    padding: 2em;
+}
+
+#new input {
+    color: lightgrey;
+}
 
 
 @keyframes move{
