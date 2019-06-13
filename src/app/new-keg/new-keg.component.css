@@ -1,0 +1,24 @@
+#newKeg {
+    margin-top: 5em;
+}
+
+#newKeg form {
+    border: 1px solid #5abfa3;
+    background-color: #112a40bb;
+    color: lightgrey;
+    padding: 2em;
+}
+
+#newKeg input {
+    color: lightgrey;
+}
+
+ .title {
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    font-size: 7em;
+    padding: 50px 0;
+    color:  #112a40;
+    border-top: 1px solid #112a40;
+    border-bottom: 1px solid #112a40;
+  }

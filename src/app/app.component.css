@@ -73,20 +73,6 @@ pinkish: #f2916d; */
     
 }
 
-#new {
-    margin-top: 5em;
-}
-
-#new form {
-    border: 1px solid #5abfa3;
-    background-color: #112a40bb;
-    color: lightgrey;
-    padding: 2em;
-}
-
-#new input {
-    color: lightgrey;
-}
 
 
 @keyframes move{

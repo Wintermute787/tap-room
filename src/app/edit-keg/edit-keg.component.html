@@ -1,0 +1,18 @@
+<h1 class="title">Edit Keg</h1>
+<div class="card">
+    <div class="card-content white-text">
+      <span class="card-title">Edit</span>
+        <p>Name: {{childSelectedKeg.name}}</p>
+        <input type="text"  #newName value={{childSelectedKeg.name}}>
+        <p>Brand: {{childSelectedKeg.brand}}</p>
+        <input type="text"  #newBrand value={{childSelectedKeg.brand}}>
+        <p>Price:</p>
+        <input type="number"  #newPrice value={{childSelectedKeg.price}}>
+        <p>Flavor: {{childSelectedKeg.flavor}} </p>
+        <input type="text"  #newFlavor value={{childSelectedKeg.flavor}}>
+    </div>
+    <div class="card-action">
+        <a class="waves-effect waves-light btn"   (click)="saveEdits(childSelectedKeg, newName.value, newBrand.value, newPrice.value, newFlavor.value)">Save</a>
+    </div>
+  </div>
+

@@ -1,95 +1,30 @@
 <div class="body">
-   
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">&nbsp;&nbsp;Fuzz Mountain</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li (click)="open(1)"><a href="#">Add new Keg</a></li>
-      <li (click)="open(2)"><a href="#">View Kegs</a></li>
-      <li (click)="open(3)"><a href="#">Customer Page</a></li>
-    </ul>
-  </div>
-</nav>          
+
+<app-nav (sendId)="open($event)"></app-nav>
 
 <div class="fullscreen-video">
-    <video autoplay muted loop id="myVideo">
-        <source src="../assets/drink.mp4" type="video/mp4">
-      </video>
+  <video autoplay muted loop id="myVideo">
+    <source src="../assets/drink.mp4" type="video/mp4">
+  </video>
 </div>
 
 <div class="container" id="new" *ngIf="new === true">
-  <h1 class="title">Add a new keg!</h1>
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input [(ngModel)]="nameKeg" name="nameKeg" type="text" class="validate">
-          <label for="nameKeg">Name</label>
-        </div>        
-        <div class="input-field col s6">
-          <input [(ngModel)]="brand_name" name="brand_name" id="brand_name" type="text" class="validate">
-          <label for="brand_name">Brand Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input [(ngModel)]="price" name="price" id="price" type="number" class="validate">
-          <label for="price">Price</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input [(ngModel)]="flavor" name="flavor" id="flavor" type="text" class="validate">
-          <label for="flavor">Flavor</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          Employee Name:
-          <div class="input-field inline">
-            <input id="employee" [(ngModel)]="employee" name="employee" type="text" class="validate">
-            <label for="employee">Your Name</label>
-          </div>
-        </div>
-      </div>
-      <button class="btn waves-effect waves-light" type="button" name="action" (click)="addNewKeg(nameKeg, brand_name, price, flavor); nameKeg=''; brand_name=''; price=''; flavor=''; employee=''">Add Keg
-        </button>
-              
-    </form>
-  </div>
+    <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
 </div>
 
 <div class="container" id="list" *ngIf="list === true">
-    <div id="show" *ngIf="show === true">
-      <app-employee-list [childKegList]="masterKegs" (clickSender)="editKeg($event)"></app-employee-list>
-    </div>
-
-        <div id="edit" *ngIf="edit === true && show === false">
-            <h1 class="title">Edit Keg</h1>
-                  <div class="card">
-                    <div class="card-content white-text">
-                      <span class="card-title">Edit</span>
-                        <p>Name: {{selectedKeg.name}}</p>
-                        <input type="text"  #newName value={{selectedKeg.name}}>
-                        <p>Brand: {{selectedKeg.brand}}</p>
-                        <input type="text"  #newBrand value={{selectedKeg.brand}}>
-                        <p>Price:</p>
-                        <input type="number"  #newPrice value={{selectedKeg.price}}>
-                        <p>Flavor: {{selectedKeg.flavor}} </p>
-                        <input type="text"  #newFlavor value={{selectedKeg.flavor}}>
-                    </div>
-                    <div class="card-action">
-                        <a class="waves-effect waves-light btn" (click)="edit = false; show = true; selectedKeg.saveEdits(newName.value, newBrand.value, newPrice.value, newFlavor.value)">Save</a>
-                    </div>
-                  </div>
-          </div>
+  <div id="show" *ngIf="show === true">
+    <app-employee-list [childKegList]="masterKegs" (clickSender)="editKeg($event)"></app-employee-list>
   </div>
+  <div id="edit" *ngIf="edit === true && show === false">
+    <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishEditing($event)"></app-edit-keg>    
+  </div>
+</div>
 
 <div class="container" id="customer" *ngIf="customer === true">
   <h1 class="title">Customer home</h1>
   <div id="customer-list">
   <div *ngFor="let keg of masterKegs">
-      
       <div class="card">
         <div class="card-content white-text">
           <span class="card-title">{{keg.name}}</span>
@@ -102,8 +37,8 @@
             <a class="waves-effect waves-light btn" (click)="open(4); this.show = false; editKeg(keg)">Edit</a> -->
         </div>
       </div>
-</div>
-</div>
+    </div>
+  </div>
 </div>
 
 </div>

@@ -6,12 +6,18 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
+import { NewKegComponent } from './new-keg/new-keg.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EditKegComponent,
+    NewKegComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

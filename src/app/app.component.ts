@@ -50,18 +50,27 @@ export class AppComponent {
     }
   }
 
-  addNewKeg(name: string, brand: string, price: number, flavor: string) {
-    let newKeg = new Keg(name, brand, price, flavor, 134);
+  addKeg(newKeg: Keg){
     this.masterKegs.push(newKeg);
+    this.new = false;
+    this.list = true;
+  
+  }
+  
+  
+  finishEditing() {
+    this.edit = false; 
+    this.show = true;
   }
 
-
-
-  editKeg(clickedKeg){
+  editKeg(clickedKeg: Keg){
     this.selectedKeg = clickedKeg;
+    console.log(this.selectedKeg);
+    
     this.open(4);
     this.show = false;
   }
+
 }
 
     // sessionStorage.setItem('keg', JSON.stringify(newKeg));
